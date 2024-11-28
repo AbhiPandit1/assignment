@@ -76,6 +76,8 @@
   justify-content: end;
   align-items: end;
   margin-right: 4%;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 .sign-button {
   height: 2rem;
@@ -110,25 +112,21 @@ form {
   gap: 1.4rem;
   width: 80%;
   margin: auto;
-}
-.name-input {
-  display: flex;
-  justify-content: space-between;
+  margin-top: 10%;
 }
 
 input {
-  padding: 0.7rem;
+  padding: 0.8rem;
   font-size: 1.3rem;
   border: 1px solid #ccc;
   border-radius: 6px;
-}
-
-input:focus {
-  border-color: #007bff;
-  outline: none;
+  width: 100%;
+  display: flex;
+  margin-top: 2rem;
 }
 
 .get-started-button {
+  margin-top: 2rem;
   padding: 0.8rem;
   font-size: 1rem;
   color: #fff;
@@ -136,10 +134,7 @@ input:focus {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-}
-
-.get-started-button:hover {
-  background-color: #0056b3;
+  width: 100%;
 }
 
 @media screen and (max-width: 768px) {
@@ -165,7 +160,7 @@ input:focus {
   }
 
   form {
-    width: 100%;
+    width: 80%;
     padding: 0 1rem;
   }
 
@@ -183,5 +178,6 @@ input:focus {
   .get-started-button {
     font-size: 0.9rem;
     padding: 0.7rem;
+    width: 100%;
   }
 }

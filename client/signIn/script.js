@@ -7,17 +7,73 @@ const usernameInput = document.querySelector('#username');
 const passwordInput = document.querySelector('#password');
 const confirmPasswordInput = document.querySelector('#confirm-password');
 
+// Helper function to validate email format
+const isValidEmail = (email) => {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+};
+
 // Add event listener for form submission
 form.addEventListener('submit', async (event) => {
   event.preventDefault(); // Prevent form from submitting the default way
 
   // Get values from form inputs
-  const firstName = firstNameInput.value;
-  const lastName = lastNameInput.value;
-  const email = emailInput.value;
-  const username = usernameInput.value;
+  const firstName = firstNameInput.value.trim();
+  const lastName = lastNameInput.value.trim();
+  const email = emailInput.value.trim();
+  const username = usernameInput.value.trim();
   const password = passwordInput.value;
   const confirmPassword = confirmPasswordInput.value;
+
+  // Validation checks
+  if (!firstName) {
+    alert('First name is required.');
+    return;
+  }
+  if (!firstName.length > 1) {
+    alert('First name have only 1 character.');
+    return;
+  }
+
+  if (!lastName) {
+    alert('Last name is required.');
+    return;
+  }
+
+  if (!email) {
+    alert('Email is required.');
+    return;
+  }
+
+  if (!isValidEmail(email)) {
+    alert('Please enter a valid email address.');
+    return;
+  }
+
+  if (!username) {
+    alert('Username is required.');
+    return;
+  }
+
+  if (username.length < 4) {
+    alert('Username must be at least 4 characters long.');
+    return;
+  }
+
+  if (!password) {
+    alert('Password is required.');
+    return;
+  }
+
+  if (password.length < 6) {
+    alert('Password must be at least 6 characters long.');
+    return;
+  }
+
+  if (password !== confirmPassword) {
+    alert('Passwords do not match.');
+    return;
+  }
 
   // Create data object to send in the POST request
   const data = {
