@@ -13,9 +13,9 @@ const isValidEmail = (email) => {
   return emailRegex.test(email);
 };
 
-// Add event listener for form submission
+// event listener for form submission
 form.addEventListener('submit', async (event) => {
-  event.preventDefault(); // Prevent form from submitting the default way
+  event.preventDefault(); // Prevent form from submitting the default 
 
   // Get values from form inputs
   const firstName = firstNameInput.value.trim();
@@ -75,7 +75,7 @@ form.addEventListener('submit', async (event) => {
     return;
   }
 
-  // Create data object to send in the POST request
+  
   const data = {
     firstName,
     lastName,
@@ -87,7 +87,7 @@ form.addEventListener('submit', async (event) => {
 
   try {
     // Make POST request to server
-    const response = await fetch('http://localhost:3000/api/post/user', {
+    const response = await fetch('https://assignment-jyep.onrender.com/api/post/user', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
