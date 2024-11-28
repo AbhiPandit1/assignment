@@ -95,14 +95,14 @@ form.addEventListener('submit', async (event) => {
       body: JSON.stringify(data),
     });
 
-    // Check if the response is successful
+    // Check if there is response
     const result = await response.json();
 
     if (response.ok) {
-      // If successful, show success message
+      // success message
       alert('Successfully registered!');
     } else {
-      // If error, show error message
+     
       alert(result.message || 'Registration failed. Please try again.');
     }
   } catch (error) {
